@@ -1,0 +1,5 @@
+Shape Colors:
+    RGB: (102,153,204)
+    #:   6699cc
+
+Figure Font: Calibri

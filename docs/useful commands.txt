@@ -1,0 +1,16 @@
+These are some useful commands for sphinx:
+
+cd ./docs
+
+! Create rst files for add all classes, modules, and packages to be used for autodoc.
+sphinx-apidoc -o source/ ../pyauxetic -f
+
+! clean the build directory and build html.
+make clean;make html
+
+! build continuously
+make clean;sphinx-autobuild source/ build/html/
+
+
+!If autodoc can't import something, it's probably because python3 can't import it
+!try to import modules using python3 and find the offending import statement.
