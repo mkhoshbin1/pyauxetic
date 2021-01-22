@@ -89,9 +89,9 @@ class MainDB(AFXDataDialog):
     #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     def open_url(self, sender, sel, ptr):
         if   SELID(sel) == self.ID_URL_WEBSITE:
-            webbrowser.open('http://www.google.com', new=2)
+            webbrowser.open('https://github.com/mkhoshbin1/pyauxetic/', new=2)
         elif SELID(sel) == self.ID_URL_DOCS:
-            webbrowser.open('http://www.yahoo.com', new=2)
+            webbrowser.open('https://pyauxetic.readthedocs.io/', new=2)
         elif SELID(sel) == self.ID_URL_AUTHOR:
             webbrowser.open('http://www.bing.com', new=2)
         else:

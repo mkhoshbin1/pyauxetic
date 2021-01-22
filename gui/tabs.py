@@ -32,7 +32,7 @@ def welcome_tab(self, form, tab_book, border_size):
     
     copyright_text = FXLabel(tab_main_frame,
         ('Copyright \xA9 2021, The PyAuxetic Team\n' + 
-         'This is an open source software published under the GNU AGPLv3 license.')
+         'PyAuxetic is an open source software published under the GNU AGPLv3 license.')
         , opts=LAYOUT_BOTTOM|LAYOUT_CENTER_X)
     copyright_text.setTextColor( FXRGB(31,31,31) )
     copyright_text.disable()
