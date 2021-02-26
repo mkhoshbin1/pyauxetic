@@ -7,7 +7,7 @@ import numpy as np
 
 from abaqusConstants import *  # noqa: F403 # Consider removing
 
-from .version import __version__
+from . import __version__
 
 logger = logging.getLogger(__name__)
 
@@ -108,7 +108,7 @@ def get_numerical_output(obj, odb):
 
 def write_single_numerical_output(output_table, structure_name, folder_path):
     with open(os.path.join(folder_path, structure_name+' results.csv') ,'w') as file:
-        file.write('Modeling and post-processing done by PyAuxetic v0.1.0.\n')
+        file.write('Modeling and post-processing done by PyAuxetic %s\n'%__version__)
         #TODO: add model info.
         file.write( ', '.join(_output_table_labels) + '\n' )
         np.savetxt(fname=file, X=output_table, fmt=_single_output_fmt,
@@ -165,7 +165,9 @@ def export_part_stl(obj, folder_path):
     
     #Seems to only work in part, assembly, and mesh. the part must be in focus.
     #Not meant to be front facing. use export_structure instead.
-    sys.path.append(r'c:/SIMULIA/CAE/2017/win_b64/code/python2.7/lib/abaqus_plugins/stlExport')
+    for p in sys.path:
+        if p.endswith('python2.7'):
+            sys.path.append( os.path.join(p, 'lib', 'abaqus_plugins', 'stlExport') )
     import stlExport_kernel
     
     # The abaqus module cannot be imported in the GUI code,

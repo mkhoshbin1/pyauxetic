@@ -11,13 +11,13 @@ thisDir = os.path.dirname(thisPath)
 toolset = getAFXApp().getAFXMainWindow().getPluginToolset()
 toolset.registerGuiMenuButton(
     object=mainForm.MainForm(toolset),
-    buttonText='PyAuxetic',
-    messageId=AFXMode.ID_ACTIVATE,
-    icon=None,          
-    kernelInitString='',#TODO: add some commands here.
-    applicableModules=ALL,
-    version=pyauxetic.__version__,
-    author='The PyAuxetic Team',
-    description='Python plugin and library for modeling, analyzing, and post-procesing auxetic structures in Abaqus.',
-    helpUrl='https://pyauxetic.readthedocs.io'
+    buttonText        = 'PyAuxetic',
+    messageId         = AFXMode.ID_ACTIVATE,
+    icon              = None,
+    kernelInitString  = '',#TODO: add some commands here.
+    applicableModules = ALL,
+    version           = pyauxetic.__version__,
+    author            = pyauxetic.__author__,
+    description       = pyauxetic.__description__,
+    helpUrl           = pyauxetic.__docs__
 )

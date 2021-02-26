@@ -27,12 +27,13 @@ logger.addHandler(info_handler)
 
 
 
-__author__     = 'The PyAuxetic Team'
-__copyright__  = 'Copyright 2021, The PyAuxetic Team'
-__credits__    = ['Mohammadreza Khoshbin', 'Javad Kadkhodapour']
-__license__    = 'AGPLv3'
-__version__    = "1.0.1"#FIXME: check 
-__maintainer__ = 'Mohammadreza Khoshbin'
-__email__      = 'm.khoshbin@live.com'
-__status__     = 'Production'
-
+__author__      = 'The PyAuxetic Team'
+__copyright__   = 'Copyright 2021, The PyAuxetic Team'
+__credits__     = ['Mohammadreza Khoshbin', 'Javad Kadkhodapour']
+__license__     = 'AGPLv3'
+__version__     = "1.0.1"#FIXME: check 
+__maintainer__  = 'Mohammadreza Khoshbin'
+__email__       = 'm.khoshbin@live.com'
+__status__      = 'Production'
+__docs__        = 'https://pyauxetic.readthedocs.io'
+__description__ = 'Python plugin and library for modeling, analyzing, and post-processing auxetic structures in Abaqus.'

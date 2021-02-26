@@ -795,13 +795,14 @@ class AuxeticStructure:
         postprocessing.write_single_numerical_output(output_table, self.name, folder_path)
         odb.close()
         
-        if output_params.save_job_files:
+        if output_params.save_job_files: 
+            #TODO: add function that uses shutil.move and shutil.copy2 in case of exception.
             os.rename( os.path.join(os.getcwd(), self.job.name + '.inp'),
                        os.path.join(folder_path, self.job.name + '.inp'))
             os.rename( os.path.join(os.getcwd(), self.job.name + '.msg'),
                        os.path.join(folder_path, self.job.name + '.msg'))
-            os.rename( os.path.join(os.getcwd(), self.job.name + '.log'),
-                       os.path.join(folder_path, self.job.name + '.log'))
+            #os.rename( os.path.join(os.getcwd(), self.job.name + '.log'), #investigate access error.
+            #           os.path.join(folder_path, self.job.name + '.log'))
             sta_string = ''
             if os.path.isfile(os.path.join(os.getcwd(), self.job.name + '.sta')):
                 sta_string = ', and sta.'
