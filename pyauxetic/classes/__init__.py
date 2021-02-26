@@ -1,11 +1,9 @@
 # See if the code is run from a Kernel or a GUI python interpreter.
 try:
-    import part
+    import part  # noqa: F401
     is_kernel = True
 except ImportError:
     is_kernel = False
-except:
-    raise
 
 # Import all structure modules here using this style
 # and in alphabetical order.
@@ -15,7 +13,7 @@ if is_kernel:
 
 def return_unit_cell_class(unit_cell_name):
     """TODO"""
-    #TODO: reconcile with the dict.
+    # TODO: reconcile with the dict.
     if unit_cell_name == 'reentrant2d_planar_shell':
         unit_cell_class = reentrant2d.Reentrant2DPlanarShellStructure
     else:

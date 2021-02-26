@@ -1,0 +1,31 @@
+# Using a Linter for the code.
+
+0. Use flake8 on a standalone python 2 interpreter.
+
+1. Install python 2 on a system with python 3 and run
+
+python -m pip install flake8
+python -m pip install flake8-html
+
+2. In the root folder run:
+flake8 --format=html --htmldir=flake-report
+
+3. Open index.html inside the flake-report folder.
+
+4. Check the messages.
+
+5. Delete the flake-report folder after use.
+
+## Considerations:
+
+* Specific errors can be ignored using "# noqa: F841".
+  Use this very sparingly and only for specific errors in specific lines.
+
+
+* F405: X may be undefined, or defined from star imports:
+      Abaqus symbolic constants are OK to import as
+      star imports, but this may hide very important errors.
+      Make sure all variables under this message are
+      Abaqus symbolic constants.
+      All errors with this code can be listed for a file with:
+      flake8 --format '%(text)s' --select F405 file_path | Select-String -Pattern "^'.*'" | foreach {$_.Matches.Value}

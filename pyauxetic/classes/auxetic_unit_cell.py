@@ -1,7 +1,7 @@
-from abc import ABCMeta, abstractmethod
 import logging
+from abc import ABCMeta, abstractmethod
 
-from abaqusConstants import *
+from abaqusConstants import *  # noqa: F403
 from abaqusExceptions import AbaqusException
 
 from .. import helper

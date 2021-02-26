@@ -1,15 +1,16 @@
-from collections import namedtuple
 import logging
 from math import sin, cos, tan
 import numpy as np
 
-from abaqusConstants import *
+from abaqusConstants import *  # noqa: F403
 
 from .. import helper
 
 from .auxetic_structure import AuxeticStructure
 from .auxetic_unit_cell import AuxeticUnitCell
-from .auxetic_unit_cell_params import *
+from .auxetic_unit_cell_params import (
+    Reentrant2DUcpFull,   Reentrant2DUcpBox,
+    Reentrant2DUcpSimple, reentrant2d_ucp_list)
 
 logger = logging.getLogger(__name__)
 
@@ -141,7 +142,7 @@ class Reentrant2DPlanarShellStructure(AuxeticStructure):
                 vector = (it.multi_index[0], it.multi_index[1], 0)*unit_cell_bound_size
             assembly.translate(instanceList=(instances[-1].name, ), vector = vector)
             # Will throw a warning for the very first instance because vector=(0,0,0).
-            if not uc in used_ucs:
+            if uc not in used_ucs:
                 used_ucs.append(uc)
         logger.debug('Patterned the unit cells based on structure_map.')
         

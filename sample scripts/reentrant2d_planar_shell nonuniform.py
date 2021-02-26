@@ -1,6 +1,11 @@
-import numpy as np
 import sys
-sys.path.append('C:\\Users\\MKhos\\Desktop\\pyauxetic')
+import numpy as np
+
+# Change this variable to to the path to the folder containing
+# the pyauxetic repository. This could be any folder such as
+# your Desktop or Abaqus' plugin path: C:\SIMULIA\CAE\plugins\2021.
+pyauxetic_library_path = r'C:\path\to\pyauxetic\root'
+sys.path.append(pyauxetic_library_path)
 
 from pyauxetic.classes.auxetic_unit_cell_params import *
 from pyauxetic.classes.auxetic_structure_params import *
@@ -90,4 +95,3 @@ auxeticObj = main_single(structure_type  , structure_name,
                          loading_params  , mesh_params   ,
                          job_params      , output_params ,
                          step_params     , run_analysis)
-

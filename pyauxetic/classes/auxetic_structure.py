@@ -1,18 +1,20 @@
+import os
+import logging
 from abc import ABCMeta, abstractmethod
 from collections import Iterable
-import os, logging
 import numpy as np
 
-from abaqusConstants import *
+from abaqusConstants import *  # noqa: F403
 from mesh import ElemType
 from odbAccess import openOdb
 from regionToolset import Region
 
-from .  import auxetic_structure_params
+from .  import auxetic_structure_params  # noqa: E272
 from .. import helper
 from .. import postprocessing
 
 logger = logging.getLogger(__name__)
+
 
 class AuxeticStructure:
     """Abstract base class for defining an auxetic structure.
@@ -31,6 +33,7 @@ class AuxeticStructure:
         9. :meth:`.output_results`
     """
     __metaclass__ = ABCMeta
+    
     def __init__(self, model, name, loading_params):
         """Initialize the auxetic structure.
         
@@ -150,7 +153,7 @@ class AuxeticStructure:
             # All elements in structure_map must correspond to a unit cell.
             uc_id_list = [uc.id for uc in self.unit_cells]
             for elem in np.unique(structure_map):
-                if not elem in uc_id_list:
+                if elem not in uc_id_list:
                     raise ValueError('structure_map contains ids' +
                                      'that are not defined as unit cells.')
         else:
@@ -308,7 +311,7 @@ class AuxeticStructure:
             td_edge_values = (coords[0][1], coords[1][1])
         else:
             ld_coords = (point_y1_coords, point_y2_coords)
-            td_coords = (point_x1_coords, point_x2_coords)
+            td_coords = (point_x1_coords, point_x2_coords)  # noqa: F841
             ld_edge_values = (coords[0][1], coords[1][1])
             td_edge_values = (coords[0][0], coords[1][0])
         
@@ -462,7 +465,7 @@ class AuxeticStructure:
         """
         
         if step_params is None:
-            StepParams = auxetic_structure_params.StepParams()
+            step_params = auxetic_structure_params.StepParams()
         
         time_period   = step_params.time_period
         init_inc_size = step_params.init_inc_size
@@ -538,7 +541,7 @@ class AuxeticStructure:
             elif loading_direction.lower() == 'y':
                 u2 = loading_data
             elif loading_direction.lower() == 'z':
-                u3 = loading_data
+                u3 = loading_data  # noqa: F841
             else:
                 raise RuntimeError("invalid value '%s' for loading_params.direction."%loading_direction)
             logger.debug('Defining the a uniaxial monotonic displacement BC.')
@@ -562,11 +565,11 @@ class AuxeticStructure:
             else:
                 raise RuntimeError("invalid value '%s' for loading_params.direction."%loading_direction)
             logger.debug('Defining the a uniaxial monotonic concentrated force.')
-            model.ConcentratedForce(name='UM-Force-BC', createStepName=loading_step.name,
-                                    region=loading_region, follower=OFF,
-                                    distributionType=UNIFORM, field='', localCsys=None,
-                                    amplitude=UNSET,
-                                    cf1=cf1, cf2=cf2, cf3=cf3)
+            self.model.ConcentratedForce(name='UM-Force-BC', createStepName=loading_step.name,
+                                         region=loading_region, follower=OFF,
+                                         distributionType=UNIFORM, field='', localCsys=None,
+                                         amplitude=UNSET,
+                                         cf1=cf1, cf2=cf2, cf3=cf3)
             logger.info('Defined a uniaxial monotonic concentrated force with the value of %f.', loading_data)
         
         else:

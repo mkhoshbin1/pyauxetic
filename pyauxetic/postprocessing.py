@@ -1,9 +1,11 @@
 """postprocessing"""
 #TODO TODO: doc. add to sphinx.
-import os, sys, logging
+import sys
+import os
+import logging
 import numpy as np
 
-from abaqusConstants import *
+from abaqusConstants import *  # noqa: F403 # Consider removing
 
 from .version import __version__
 
@@ -124,8 +126,7 @@ def write_batch_numerical_output(time_value, unit_cell_params_list,
     results_tables = []
     logger.debug('Reading numerical output of the structures.')
     for i in range(len(structure_names)):
-        with open(
-            os.path.join(results_folder_paths[i], structure_names[i]+' results.csv'),
+        with open(os.path.join(results_folder_paths[i], structure_names[i]+' results.csv'),
                   'r') as file:
             results_tables.append( 
                 np.loadtxt(fname=file, skiprows=2, delimiter=',') )

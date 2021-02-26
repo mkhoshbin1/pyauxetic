@@ -1,7 +1,8 @@
+import os
 from abaqusGui import getAFXApp, Activator, AFXMode
 from abaqusConstants import ALL
-import os
 import mainForm
+import pyauxetic
 
 thisPath = os.path.abspath(__file__)
 thisDir = os.path.dirname(thisPath)
@@ -12,11 +13,11 @@ toolset.registerGuiMenuButton(
     object=mainForm.MainForm(toolset),
     buttonText='PyAuxetic',
     messageId=AFXMode.ID_ACTIVATE,
-    icon=None,          #TODO
-    kernelInitString='',
+    icon=None,          
+    kernelInitString='',#TODO: add some commands here.
     applicableModules=ALL,
-    version='N/A',      #TODO
+    version=pyauxetic.__version__,
     author='The PyAuxetic Team',
-    description='N/A',  #TODO
-    helpUrl='N/A'       #TODO
+    description='Python plugin and library for modeling, analyzing, and post-procesing auxetic structures in Abaqus.',
+    helpUrl='https://pyauxetic.readthedocs.io'
 )

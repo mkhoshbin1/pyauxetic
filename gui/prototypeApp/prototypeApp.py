@@ -1,6 +1,7 @@
-# The prototypeApp framework was is taken from
-# https://github.com/saullocastro/programming/archive/master.zip
-# by Saullo G P Castro of TU Delft.
+# The prototypeApp framework was is from Abaqus,
+# But was taken from the GitHub repository of
+# Saullo G P Castro of TU Delft.
+# https://github.com/saullocastro/programming
 """
 This script will create the prototype application.
 """

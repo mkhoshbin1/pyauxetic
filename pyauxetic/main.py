@@ -1,18 +1,20 @@
-""" Main functions of the PyAuxetic API.
+"""Main functions of the PyAuxetic API.
 
 This package contains the main functions used in the PyAuxetic API which are
 used for creating and analyzing one or more auxetic structures.
 It also defines the bindings for the GUI library used in the Abaqus plugin.
 """
-import os, logging
-from math import sin, tan
+import os
+import logging
 import numpy as np
 
 from . import classes
 from . import helper
 from . import postprocessing
-from .version import __version__
-from .classes.auxetic_structure_params import *
+from .version import __version__ # TODO: Use from . import __version__
+from .classes.auxetic_structure_params import (
+    PatternParams, MaterialParams, StepParams,
+    LoadingParams, MeshParams, JobParams, OutputParams)
 
 logger = logging.getLogger(__name__)
 

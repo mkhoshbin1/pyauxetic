@@ -1,9 +1,10 @@
 """ Helper functions used in the PyAuxetic library for various operations."""
 
 from collections import Iterable
-import os, logging
+import os
+import logging
 
-from abaqusConstants import *
+from abaqusConstants import *  # noqa: F403
 from part import EdgeArray, VertexArray
 
 logger = logging.getLogger(__name__)
