@@ -9,7 +9,7 @@ Installing as a Plugin
 
 To install the software as a plugin to Abaqus, follow these steps:
   + Obtain a copy of the software from Github. You can either clone/fork the repository or download as a zip.
-  + Copy the software to you Abaqus *plugins* folder. This is generally in ``C:\SIMULIA\CAE\plugins\VERSION``, where *VERSION* refers to abaqus version, e.g. *2017*.
+  + Copy the software to you Abaqus *plugins* folder. This is generally in ``C:\SIMULIA\CAE\plugins\VERSION``, where *VERSION* refers to abaqus version, e.g. *2021*.
   
   + Restart Abaqus.
   

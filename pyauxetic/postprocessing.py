@@ -7,7 +7,7 @@ import numpy as np
 
 from abaqusConstants import *  # noqa: F403 # Consider removing
 
-from .version import __version__
+from . import __version__
 
 logger = logging.getLogger(__name__)
 
