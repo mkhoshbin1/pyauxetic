@@ -11,6 +11,7 @@ import numpy as np
 from . import classes
 from . import helper
 from . import postprocessing
+
 from . import __version__
 from .classes.auxetic_structure_params import (
     PatternParams, MaterialParams, StepParams,
