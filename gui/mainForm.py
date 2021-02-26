@@ -183,7 +183,6 @@ class MainForm(AFXForm):
         cmds = ''
         cmds += "sys.path.append('%s')\n" %pyauxetic_library_path
         cmds += 'import pyauxetic.main\n'
-        cmds += 'reload(pyauxetic.main)\n'
         
         cmds += AFXForm.getCommandString(self)
         return cmds
