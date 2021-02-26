@@ -92,7 +92,7 @@ class MainDB(AFXDataDialog):
             webbrowser.open('https://github.com/mkhoshbin1/pyauxetic/', new=2)
         elif SELID(sel) == self.ID_URL_DOCS:
             webbrowser.open('https://pyauxetic.readthedocs.io/', new=2)
-        elif SELID(sel) == self.ID_URL_AUTHOR:
+        elif SELID(sel) == self.ID_URL_AUTHOR:#TODO: Delete.
             webbrowser.open('http://www.bing.com', new=2)
         else:
             raise ValueError('Invalid selector. This should not have happened.'+str(sel))

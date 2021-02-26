@@ -1,6 +1,11 @@
 from abaqusGui import *
-pyauxetic_library_path = 'C:\\Users\\MKhos\\Desktop\\pyauxetic'
+
+# Find the location of the the pyauxetic library.
+import inspect
+current_file_path = inspect.getfile(inspect.currentframe())
+pyauxetic_library_path = os.path.split(os.path.split(current_file_path)[0])[0]
 sys.path.append(pyauxetic_library_path)
+
 from pyauxetic.classes import auxetic_unit_cell_params
 
 import mainDB
@@ -178,7 +183,6 @@ class MainForm(AFXForm):
         cmds = ''
         cmds += "sys.path.append('%s')\n" %pyauxetic_library_path
         cmds += 'import pyauxetic.main\n'
-        cmds += 'reload(pyauxetic.main)\n'
         
         cmds += AFXForm.getCommandString(self)
         return cmds
