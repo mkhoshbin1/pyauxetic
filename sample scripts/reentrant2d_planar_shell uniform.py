@@ -3,7 +3,7 @@ import numpy as np
 
 # Change this variable to to the path to the folder containing
 # the pyauxetic repository. This could be any folder such as
-# your Desktop or Abaqus' plugin path: C:\SIMULIA\CAE\plugins\2021\pyauxetic.
+# your Desktop, or Abaqus' plugin path: C:\SIMULIA\CAE\plugins\2021\pyauxetic.
 # Note that if you downloaded pyauxetic as a zip file,
 # it will probably have a version suffix which you should remove.
 pyauxetic_library_path = r'C:\path\to\pyauxetic'

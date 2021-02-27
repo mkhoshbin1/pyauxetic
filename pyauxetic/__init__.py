@@ -1,12 +1,6 @@
-
-
-from .version import __version__#FIXME: check 
-
-
 import logging
-#import classes
 
-#Remove this.
+# TODO: Remove this.
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
@@ -31,7 +25,7 @@ __author__      = 'The PyAuxetic Team'
 __copyright__   = 'Copyright 2021, The PyAuxetic Team'
 __credits__     = ['Mohammadreza Khoshbin', 'Javad Kadkhodapour']
 __license__     = 'AGPLv3'
-__version__     = "1.0.1"#FIXME: check 
+__version__     = "2.0.0"
 __maintainer__  = 'Mohammadreza Khoshbin'
 __email__       = 'm.khoshbin@live.com'
 __status__      = 'Production'
