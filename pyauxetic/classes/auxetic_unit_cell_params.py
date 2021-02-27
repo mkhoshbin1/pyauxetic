@@ -31,7 +31,7 @@ Reentrant2DUcpFull.formal_names   = {
     'tail_strut_thickness': 'Tail Strut Thickness'      ,
     'diag_strut_length'   : 'Diagonal Strut Length'     ,
     'diag_strut_thickness': 'Diagonal Strut Thickness'  ,
-    'diag_strut_angle'    : 'Diagonal Strut Angle (rad)',
+    'diag_strut_angle'    : 'Diagonal Strut Angle (deg)',
     'vert_strut_length'   : 'Vertical Strut Length'     ,
     'vert_strut_thickness': 'Vertical Strut Thickness'
 }
@@ -50,7 +50,7 @@ Reentrant2DUcpBox.formal_names   = {
     'vert_bounding_box'   : 'Horizontal Bounding Box'   ,
     'vert_strut_thickness': 'Vertical Strut Thickness'  ,
     'diag_strut_thickness': 'Diagonal Strut Thickness'  ,
-    'diag_strut_angle'    : 'Diagonal Strut Angle (rad)'
+    'diag_strut_angle'    : 'Diagonal Strut Angle (deg)'
 }
 
 Reentrant2DUcpSimple = \
@@ -65,7 +65,7 @@ Reentrant2DUcpSimple.formal_names   = {
     'vert_strut_length'   : 'Vertical Strut Length'     ,
     'vert_strut_thickness': 'Vertical Strut Thickness'  ,
     'diag_strut_thickness': 'Diagonal Strut Thickness'  ,
-    'diag_strut_angle'    : 'Diagonal Strut Angle (rad)'
+    'diag_strut_angle'    : 'Diagonal Strut Angle (deg)'
 }
 
 reentrant2d_ucp_list = (Reentrant2DUcpFull, Reentrant2DUcpBox, Reentrant2DUcpSimple)
