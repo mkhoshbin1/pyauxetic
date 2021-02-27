@@ -166,8 +166,8 @@ def export_part_stl(obj, folder_path):
     #Seems to only work in part, assembly, and mesh. the part must be in focus.
     #Not meant to be front facing. use export_structure instead.
     for p in sys.path:
-        if p.endswith('python2.7'):
-            sys.path.append( os.path.join(p, 'lib', 'abaqus_plugins', 'stlExport') )
+        if p.endswith( os.path.join('code', 'python2.7', 'lib') ):  # May not work on linux
+            sys.path.append( os.path.join(p, 'abaqus_plugins', 'stlExport') )
     import stlExport_kernel
     
     # The abaqus module cannot be imported in the GUI code,
