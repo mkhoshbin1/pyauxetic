@@ -347,7 +347,6 @@ def main_gui_proxy(**kwargs):
                                  save_cae               = kwargs['save_cae'           ],
                                  save_odb               = kwargs['save_odb'           ],
                                  save_job_files         = kwargs['save_job_files'     ],
-                                 export_extrusion_depth = kwargs['extrusion_depth'    ],
                                  export_ribbon_width    = kwargs['export_ribbon_width'],
                                  export_stl             = kwargs['export_stl'         ],
                                  export_stp             = kwargs['export_stp'         ])

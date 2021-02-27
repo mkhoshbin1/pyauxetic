@@ -67,9 +67,9 @@ class MainForm(AFXForm):
         
         ## Analysis tab
         #TODO: implement enable/disable.
-        self.run_analysis_kw = AFXBoolKeyword(self.cmd, 'run_analysis', AFXBoolKeyword.TRUE_FALSE, True, False)
+        self.run_analysis_kw = AFXBoolKeyword(self.cmd, 'run_analysis', AFXBoolKeyword.TRUE_FALSE, True, True)
         
-        self.material_type_kw                = AFXStringKeyword(self.cmd, 'material_type'      , False)
+        self.material_type_kw                = AFXStringKeyword(self.cmd, 'material_type', True)
         self.material_elastic_table_kw       =  AFXTableKeyword(self.cmd, 'material_elastic_table'      , False, 1, 2, opts=AFXTABLE_TYPE_FLOAT)
         self.material_stress_strain_table_kw =  AFXTableKeyword(self.cmd, 'material_stress_strain_table', False, 1, 2, opts=AFXTABLE_TYPE_FLOAT)
         
@@ -107,8 +107,7 @@ class MainForm(AFXForm):
         self.export_stl_kw      = AFXBoolKeyword(self.cmd, 'export_stl'     , AFXBoolKeyword.TRUE_FALSE, True, True)
         self.export_stp_kw      = AFXBoolKeyword(self.cmd, 'export_stp'     , AFXBoolKeyword.TRUE_FALSE, True, True)
         
-        self.export_ribbon_width_kw = AFXFloatKeyword(self.cmd, 'export_ribbon_width', False)
-        self.extrusion_depth_kw     = AFXFloatKeyword(self.cmd, 'extrusion_depth'    , False)
+        self.export_ribbon_width_kw = AFXFloatKeyword(self.cmd, 'export_ribbon_width', True, 4)
         
         
     #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

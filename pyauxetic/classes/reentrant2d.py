@@ -198,8 +198,8 @@ class Reentrant2DPlanarShellStructure(AuxeticStructure):
                                Special namedtuple describing the parameters
                                for outputting the results of modeling and analysis.
                                See class for full description of options.
-                               Here, *output_params.export_extrusion_depth*
-                               it is used for deteriming ribbon_extrusion_depth.
+                               Here, *output_params.export_ribbon_width*
+                               it is used for deteriming width of the ribbon.
                                If for_3dprint is :obj:`False`, this need not be
                                passed. Defaults to :obj:`None`.
                                
@@ -233,24 +233,23 @@ class Reentrant2DPlanarShellStructure(AuxeticStructure):
         
         # Create the ribbon.
         logger.debug('Creating the ribbon.')
-        # Width of the ribbon will be the maximum value of
-        # vert_strut_thickness in all unit cells.
-        ribbon_width = max(
-            [uc.params.vert_strut_thickness for uc in self.unit_cells] )
+        
+        if for_3dprint:
+            # Width of the ribbon is determined by output_params.
+            ribbon_width = output_params.export_ribbon_width
+        else:
+            # Width of the ribbon will be the maximum value of
+            # vert_strut_thickness in all unit cells.
+            ribbon_width = max(
+                [uc.params.vert_strut_thickness for uc in self.unit_cells] )
         if self.loading_direction == 0:
             ribbon_size = (ribbon_width, self.num_cell_repeat[1] * unit_cell_bound_size[1] )
         else:
             ribbon_size = (self.num_cell_repeat[0] * unit_cell_bound_size[0], ribbon_width )
         
-        if for_3dprint:
-            if output_params is None:
-                raise ValueError('for_3dprint is True, but output_params has not been specified.')
-            ribbon_extrusion_depth = output_params.export_extrusion_depth
-        else:
-            ribbon_extrusion_depth = structure_extrusion_depth
         ribbon_part = helper.create_ribbon_part(model=self.model,
                                 length_x=ribbon_size[0], length_y=ribbon_size[1],
-                                is3d=for_3dprint, extrusion_depth=ribbon_extrusion_depth)
+                                is3d=for_3dprint, extrusion_depth=structure_extrusion_depth)
         logger.debug('Created the ribbon.')
         
         # Instantiate and position ribbon 1.

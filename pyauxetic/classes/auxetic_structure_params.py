@@ -13,7 +13,6 @@ PatternParams = \
                ['pattern_mode', 'num_cell_repeat', 'structure_map'] )
 PatternParams.__new__.__defaults__ = (None, None, None)
 try:
-    #TODO: OutputParams.export_extrusion_depth.__doc__
     PatternParams.__doc__ = """namedtuple instance describing the parameters
                            for patterning the unit cell(s) that make up the structure.
                            """
@@ -243,12 +242,10 @@ OutputParams = \
     namedtuple('OutputParams',
                ['result_folder_name',
                 'save_cae', 'save_odb', 'save_job_files',
-                'export_extrusion_depth', 'export_ribbon_width',
-                'export_stl', 'export_stp'])
+                'export_ribbon_width', 'export_stl', 'export_stp'])
 OutputParams.__new__.__defaults__ = (None,
                                      True, True, True,
-                                     None, None,
-                                     False, False)
+                                     None, False, False)
 # This entire block only runs under Python 3.5+,
 # because docstrings are immutable. However,
 # it is written for documentation using sphinx.
@@ -270,16 +267,6 @@ try:
     OutputParams.save_job_files.__doc__ = \
                            """Whether or not to save the miscellaneous job files
                            (inp, msg, log, and sta files). Defaults to :obj:`True`.
-                           """
-    OutputParams.export_extrusion_depth.__doc__ = \
-                           """:class:`Float` defining the depth used for extruding a planar structure
-                           for 3D export.
-                           
-                           Must be positive, but can be :obj:`None` if the part
-                           is not planar or will not be exported
-                           (both export_stl are export_stp are :obj:`False`).
-                           
-                           Defaults to :obj:`None`.
                            """
     OutputParams.export_ribbon_width.__doc__ = \
                            """:class:`Float` defining the ribbon width used for exporting the part.

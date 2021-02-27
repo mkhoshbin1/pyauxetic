@@ -323,7 +323,6 @@ def results_tab(self, form, tab_book, border_size):
     
     export_nums_aligner = AFXVerticalAligner(export_box, LAYOUT_FILL_X)
     AFXTextField(export_nums_aligner, 10, 'Export Ribbon Width:', opts=AFXTEXTFIELD_FLOAT, tgt=form.export_ribbon_width_kw)
-    AFXTextField(export_nums_aligner, 10, 'Extrusion Depth:'    , opts=AFXTEXTFIELD_FLOAT, tgt=form.extrusion_depth_kw)
     AFXNote(export_box, 'The 2D structure will be extruded in the Z-direction.')
     #TODO: disable if checkbox is off.
     #TODO: hide the 3d stuff if the structure is already 3d.
