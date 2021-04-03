@@ -303,7 +303,7 @@ def main_gui_proxy(**kwargs):
     if run_analysis:
         # Define material_params.
         if   kwargs['material_type'] == 'Elastic':
-            material_params = MaterialParams(elastic = kwargs['material_elastic_table'])
+            material_params = MaterialParams(elastic = kwargs['material_elastic_table'][0])
         elif kwargs['material_type'] == 'Hyperelastic - Ogden':
             material_params = MaterialParams(hyperelastic = ('ogden', kwargs['material_stress_strain_table']))
         elif kwargs['material_type'] == 'Hyperelastic - Marlow':

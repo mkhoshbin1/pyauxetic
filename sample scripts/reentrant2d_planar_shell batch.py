@@ -72,7 +72,6 @@ output_params = OutputParams(
     save_cae               = True,
     save_odb               = True,
     save_job_files         = True,
-    export_extrusion_depth = 5.0 ,
     export_ribbon_width    = 4.0 ,
     export_stl             = True,
     export_stp             = True
