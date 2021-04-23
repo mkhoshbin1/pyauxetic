@@ -9,7 +9,7 @@ Main Team
 
 **Javad Kadkhodapour, PhD**: Project Lead. Developed concepts and coordinates research and programming efforts.
 
-**Mohammadreza Khoshbin, PhDc**: Software Developer and Maintainer. Created the software based on the previous prototype and maintains the software and documentation.
+**Mohammadreza Khoshbin, PhDc**: Software Developer and Maintainer. Developed concepts, created the software and maintains the software and documentation.
 
 
 Contributers
@@ -20,3 +20,5 @@ Contributers
 **Hossein Dibajian, PhD**: Developed concepts and wrote the initial version of the software named *Auextic2D*.
 
 **Alireza Sangsefidi, PhDc**: Performed experiments for example problems and tested the software.
+
+**Shane O' Sullivan** (University of Limerick, Ireland): Tested the GUI and reported multiple bugs.
